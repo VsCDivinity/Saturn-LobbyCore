@@ -1,6 +1,6 @@
 name: saturnLobbyCore
 version: 1.0.0
 author: VsCDivinity
-main: saturn\main
+main: saturn\Main
 description: made for saturn network 
 
