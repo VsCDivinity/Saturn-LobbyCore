@@ -15,7 +15,9 @@ class Main Extends PluginBase {
   }
   
   public function OnEnable(): void {
+    $this->getServer()->getCommandMap()->register('info', new InfoCommand());
     $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
+    
     
   }
   
