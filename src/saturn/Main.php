@@ -5,7 +5,7 @@ namespace saturn;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
 use saturn\commands\InfoCommand;
-use saturn\commands\HubCommand;
+use saturn\bossbar\BossBar;
 
 class Main Extends PluginBase {
   
@@ -19,7 +19,7 @@ class Main Extends PluginBase {
   public function OnEnable(): void {
     $this->getServer()->getCommandMap()->register('info', new InfoCommand());
     $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
-    $this->getServer()->getPluginManager()->registerEvents(new Bossbar($this), $this);
+    $this->getServer()->getPluginManager()->registerEvents(new BossBar($this), $this);
     $this->getServer()->getNetwork()->setname($this->GetConfig()->get("LobbyMotd"));
   }
   public function OnDisable(): void {
