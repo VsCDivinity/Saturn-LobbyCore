@@ -6,8 +6,9 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
 use saturn\commands\InfoCommand;
 use saturn\scoreboard\Scoreboard;
+use saturn\session\Session;
 
-class Main Extends PluginBase {
+class Main extends PluginBase {
   
   use SingletonTrait;
   
@@ -19,6 +20,7 @@ class Main Extends PluginBase {
   public function OnEnable(): void {
     $this->getServer()->getCommandMap()->register('info', new InfoCommand());
     $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
+    $this->getServer()->getPluginManager()->registerEvents(new Session($this), $this);
     $this->getServer()->getPluginManager()->registerEvents(new Scoreboard($this), $this);
     $this->getServer()->getNetwork()->setname($this->GetConfig()->get("LobbyMotd"));
   }
