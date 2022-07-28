@@ -21,7 +21,7 @@ class EventListener implements Listener {
    }
  
    public function onDrop(PlayerDropItemEvent $event) {
-     $player = $event = getPlayer();
+     $player = $event->getPlayer();
      $event->cancel();
      $player->sendMessage("§l[§c!§r§l] §cYou can't throw objects here");
    }
