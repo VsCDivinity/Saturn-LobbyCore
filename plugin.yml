@@ -3,4 +3,7 @@ version: 1.0.0
 author: VsCDivinity
 main: saturn\Main
 description: made for saturn network 
-
+permissions:
+  info.use:
+  default: op
+  
