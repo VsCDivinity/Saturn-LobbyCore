@@ -3,6 +3,8 @@
 namespace saturn\session;
 
 use saturn\utils\Utils;
+use saturn\items\EnderBuff;
+use saturn\items\ServerSelector;
 
 use pocketmine\Server;
 use pocketmine\player\Player;
@@ -37,6 +39,8 @@ class Session implements Listener {
       $player->getOffHandInventory()->clearAll();
       $player->getArmorInventory()->clearAll();
       $player->teleport($player->getServer()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
+      $player->getInventory()->setItem(0, new EnderBuff());
+      $player->getInventory()->setItem(4, new ServerSelector());
         
       $player->sendPopup(TextFormat::colorize("&r&eThanks For Playing &dSaturn &fNetwork"));
     }
