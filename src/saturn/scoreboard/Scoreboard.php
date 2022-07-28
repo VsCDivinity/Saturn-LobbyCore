@@ -5,6 +5,7 @@ namespace saturn\scoreboard;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
+use saturn\scoreboard\ScoreboardAPI;
 
 class Scoreboard implements Listener {
   
