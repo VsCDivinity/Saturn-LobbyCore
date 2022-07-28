@@ -19,8 +19,9 @@ class Main Extends PluginBase {
     $this->getServer()->getCommandMap()->register('info', new InfoCommand());
     $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
     $this->getServer()->getNetwork()->setname($this->GetConfig()->get("LobbyMotd"));
-    
-    
+  }
+  public function OnDisable(): void {
+    $this->getLogger()->notice("[!] Saturn Core Successfully Disabled");
   }
   
 }
