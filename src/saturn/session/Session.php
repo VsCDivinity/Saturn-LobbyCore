@@ -24,7 +24,7 @@ class Session implements Listener {
     /** Joining Constructor.
      * 
      */
-      $event->setJoinMessage(TextFormat::colorize("&7[&dLunaria&f!&7] &f{$player->getName()} join the server"));
+      $event->setJoinMessage(TextFormat::colorize("§l[§dSaturn§r§l] §b{$player->getName()} join the server"));
         
       $player->setGamemode(GameMode::ADVENTURE());
       $player->setHealth(20);
