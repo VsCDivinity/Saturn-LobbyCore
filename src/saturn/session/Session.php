@@ -8,6 +8,7 @@ use pocketmine\Server;
 use pocketmine\player\Player;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\Listener;
 use pocketmine\player\GameMode;
 
@@ -17,14 +18,14 @@ class Session implements Listener {
 	*
 	*/
 	
-	 public function onJoin(PlayerJoinEvent $event)
+   public function OnJoin(PlayerJoinEvent $event)
      {
      $player = $event->getPlayer();
     
     /** Joining Constructor.
-     * 
-     */
-      $event->setJoinMessage(TextFormat::colorize("§l[§dSaturn§r§l] §b{$player->getName()} join the server"));
+    * 
+    */
+      $event->setJoinMessage(TextFormat::colorize("&7[&dSaturn&f!&7] &f{$player->getName()} join the server"));
         
       $player->setGamemode(GameMode::ADVENTURE());
       $player->setHealth(20);
@@ -38,8 +39,18 @@ class Session implements Listener {
       $player->teleport($player->getServer()->getWorldManager()->getDefaultWorld()->getSafeSpawn());
         
       $player->sendPopup(TextFormat::colorize("&r&eThanks For Playing &dSaturn &fNetwork"));
-    
+    }
+    public function OnQuit(PlayerQuitEvent $event){
+      $player = $event->getPlayer();
+    /** Quit Constructor
+    *
+    */
+      $event->setQuitMessage("&7[&dSaturn&f!&7] &f{$player->getName()} quit the server");
+      $player->getInventory()->clearAll();
+      $player->getOffHandInventory()->clearAll();
+      $player->getArmorInventory()->clearAll();
     }
 }
+?>
 
 
