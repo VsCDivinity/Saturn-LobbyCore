@@ -1,8 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
-namespace ScoreboardAPI;
+namespace saturn\scoreboard;
 
 use pocketmine\network\mcpe\protocol\RemoveObjectivePacket;
 use pocketmine\network\mcpe\protocol\SetDisplayObjectivePacket;
