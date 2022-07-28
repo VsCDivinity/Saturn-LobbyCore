@@ -1,9 +1,5 @@
-
-# Server Settings 
-
 ServerUtils:
 LobbyMotd: "§dSaturn§f |§7 1.19.10"
-
 
 #Server Settings Command
 
