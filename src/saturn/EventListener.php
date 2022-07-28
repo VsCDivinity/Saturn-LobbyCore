@@ -4,20 +4,18 @@ namespace saturn;
 
 use pocketmine\player\Player;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerJoinEvent;
-use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 
 class EventListener implements Listener {
   
-  public function onDamage(EntityDamageEvent $event):void {
+    public function onDamage(EntityDamageEvent $event):void {
         if(!$event->getEntity() instanceof Player) return;
         
         $event->cancel();
  }
  
- public function onHunger(PlayerExhaustEvent $event):void {
+   public function onHunger(PlayerExhaustEvent $event):void {
         $event->cancel();
  }
  
