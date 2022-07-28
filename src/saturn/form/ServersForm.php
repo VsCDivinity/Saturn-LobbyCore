@@ -26,17 +26,4 @@ class ServersForm extends SimpleForm {
     });
        $this->addButton($button);
     }
-
-    protected function onCreation(): void {
-      $this->addCosmeticsButton();
-    }
-    private function addCosmeticsButton(): void {
-    $button = new Button("§dFactions", null, function (Player $player){
-    	$player->transfer("play.infinitymcpe.com", 19132);
-    });
-    $button->setIcon(new ButtonIcon("textures/items/diamond_pickaxe", ButtonIcon::TYPE_PATH));
-    $button->setSubmitListener(function(Player $player){
-    });
-       $this->addButton($button);
-    }
 }
