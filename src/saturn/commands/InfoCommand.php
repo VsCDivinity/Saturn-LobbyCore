@@ -19,5 +19,9 @@ class InfoCommand extends Command {
           $sender->sendMessage("§l[§c!§r§l] §cYou do not have permissions to use this command");
           return;
       }
+      $config = main::getInstance()->getConfig();
+      $sender->sendMessage("");
+      $sender->sendMessage($config->get("InfoCommand"));
+      $sender->sendMessage("§r");
   }
 }
