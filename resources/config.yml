@@ -1,7 +1,16 @@
 ServerUtils:
 LobbyMotd: "§dSaturn§f |§7 1.19.10"
+Shop: "§l§bSaturn.tebex.ui"
 
 #Server Settings Command
 
 ServerCommands:
 InfoCommand: "§l[§c!§r§l] Hey WellCome to §dSaturn Network §r§lenjoy great news from this server"
+
+Menu:
+RankName1: "test1"
+RankName2: "test2"
+RankName3: "test3"
+RankName4: "test4"
+RankName5: "test5"
+RankName6: "test6"
